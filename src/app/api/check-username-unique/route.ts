@@ -67,7 +67,7 @@ export async function GET(request: Request) {
     return Response.json(
       {
         success: true,
-        message: "Username is unique and valid",
+        message: "Username is unique and valid👍🏻",
       },
       { status: 201 }
     );
