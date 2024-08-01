@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/context/AuthProvider";
 import { Toaster } from "react-hot-toast";
+import Navbar from "@/components/navbar/Navbar";
+// import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
