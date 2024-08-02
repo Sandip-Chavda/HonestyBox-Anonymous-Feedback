@@ -23,7 +23,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { signInSchema } from "@/schemas/signInSchema";
-import { signIn } from "next-auth/react";
+import { signIn, SignInResponse } from "next-auth/react";
 
 const SigninPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,13 +48,59 @@ const SigninPage = () => {
 
     // console.log(result)
 
+    // if (result?.error) {
+    //   toast.error("Incorrect username or password, try again!🚫");
+    // }
+
+    // if (result?.url) {
+    //   router.replace("/dashboard");
+    //   toast.success("Login Successfully...🎊");
+    // }
+
+    //----------Another way -------//
+    handleResult(result);
+  };
+
+  const handleResult = (result: SignInResponse | undefined) => {
     if (result?.error) {
-      toast.error("Incorrect username or password, try again!🚫");
+      if (result.error === "CredentialsSignin") {
+        toast.error("Incorrect username or password, try again!🚫");
+      } else {
+        toast.success("Login Successfully...🎊");
+      }
     }
 
     if (result?.url) {
       router.replace("/dashboard");
-      toast.success("Login Successfully...🎊");
+    }
+  };
+
+  //----------- Demo user or Login ----------//
+
+  const [loading, setIsLoading] = useState(false);
+
+  const handleDemoLogin = async () => {
+    setIsLoading(true);
+
+    try {
+      const demoCredentials = {
+        identifier: "one",
+        password: "onetwothree",
+      };
+
+      const result = await signIn("credentials", {
+        redirect: false,
+        ...demoCredentials,
+      });
+      handleResult(result);
+
+      toast.success("Demo account login successfully...");
+    } catch (error) {
+      console.log("Error in demo login ", error);
+      setIsLoading(false);
+      toast.error("Failed to login with demo acccount!");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -106,15 +152,32 @@ const SigninPage = () => {
               )}
             />
 
-            <Button className="w-full" type="submit" disabled={isSubmitting}>
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Loading...
-                </>
-              ) : (
-                "Sign in →"
-              )}
-            </Button>
+            <div className="flex space-x-4">
+              <Button className="w-full" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Loading...
+                  </>
+                ) : (
+                  "Sign in →"
+                )}
+              </Button>
+
+              <Button
+                disabled={loading}
+                type="button"
+                onClick={handleDemoLogin}
+                variant="outline"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Loading...
+                  </>
+                ) : (
+                  "Demo Account →"
+                )}
+              </Button>
+            </div>
           </form>
         </Form>
         {/* Form Component */}
