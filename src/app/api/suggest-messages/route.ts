@@ -1,27 +1,3 @@
-// import { OpenAI, openai } from "@ai-sdk/openai";
-// import { streamText } from "ai";
-
-// // Allow streaming responses up to 30 seconds
-// export const maxDuration = 30;
-
-// export async function POST(req: Request) {
-//   try {
-//     const prompt = "Create a list of three open-ended and engaging";
-
-//     const { messages } = await req.json();
-
-//     const result = await streamText({
-//       model: openai("gpt-3.5-turbo"),
-//       messages,
-//     });
-
-//     return result.toDataStreamResponse();
-//   } catch (error) {
-//     console.error("An Unexpected Error Occured!", error);
-//     throw error;
-//   }
-// }
-
 import OpenAI from "openai";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import { NextResponse } from "next/server";

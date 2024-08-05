@@ -56,29 +56,6 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 
-  callbacks: {
-    async session({ session, token }) {
-      if (token) {
-        session.user._id = token._id;
-        session.user.isVerified = token.isVerified;
-        session.user.isAcceptingMessages = token.isAcceptingMessages;
-        session.user.username = token.username;
-      }
-
-      return session;
-    },
-    async jwt({ token, user }) {
-      if (user) {
-        token._id = user._id?.toString();
-        token.isVerified = user.isVerified;
-        token.isAcceptingMessages = user.isAcceptingMessages;
-        token.username = user.username;
-      }
-
-      return token;
-    },
-  },
-
   pages: {
     signIn: "/sign-in",
   },
@@ -88,4 +65,32 @@ export const authOptions: NextAuthOptions = {
   },
 
   secret: process.env.NEXT_AUTH_SECRET,
+
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token._id = user._id?.toString();
+        token.isVerified = user.isVerified;
+        token.isAcceptingMessages = user.isAcceptingMessages;
+        token.username = user.username;
+      }
+
+      // console.log("This token in option file. ", token);
+
+      return token;
+    },
+
+    async session({ session, token }) {
+      if (token) {
+        session.user._id = token._id;
+        session.user.isVerified = token.isVerified;
+        session.user.isAcceptingMessages = token.isAcceptingMessages;
+        session.user.username = token.username;
+      }
+
+      // console.log("this is session", session);
+
+      return session;
+    },
+  },
 };

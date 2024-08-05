@@ -32,7 +32,7 @@ export async function DELETE(
       { $pull: { messages: { _id: messageId } } }
     );
 
-    if (updateResult.modifiedCount === 0) {
+    if (updateResult.modifiedCount == 0) {
       return Response.json(
         {
           success: false,

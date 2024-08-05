@@ -1,7 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 import bcrypt from "bcryptjs";
-
 import { sendVerificationEmail } from "../../../../helpers/sendVerificationEmail";
 
 export async function POST(request: Request) {
@@ -34,6 +33,7 @@ export async function POST(request: Request) {
         return Response.json(
           {
             success: false,
+            // With this nodemailer version no any errors
             // ERROR: Can be here because we use nodemailer node resend
             // To Resolve error use any "hardcoded message" like this
             message:

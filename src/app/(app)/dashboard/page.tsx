@@ -83,7 +83,7 @@ const DashboardPage = () => {
     fetchMessages();
 
     fetchAcceptMessage();
-  }, [session, setValue, toast, fetchAcceptMessage, fetchMessages]);
+  }, [session, setValue, fetchAcceptMessage, fetchMessages]);
 
   // Handle switch change
   const handleSwitchChange = async () => {
@@ -94,7 +94,7 @@ const DashboardPage = () => {
       setValue("acceptMessages", !acceptMessages);
       toast.success("Message accepting status updated successfully...");
     } catch (error) {
-      const axiosError = error as AxiosError<ApiResponse>;
+      // const axiosError = error as AxiosError<ApiResponse>;
       toast.error("Failed update message accepting status, please try again!");
     }
   };
@@ -114,6 +114,7 @@ const DashboardPage = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(profileUrl);
+
     toast.success("Link copied to clipboard.");
   };
 

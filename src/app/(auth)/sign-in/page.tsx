@@ -84,8 +84,8 @@ const SigninPage = () => {
 
     try {
       const demoCredentials = {
-        identifier: "one",
-        password: "onetwothree",
+        identifier: "DemoUser",
+        password: "cylonescorpion@gmail.com",
       };
 
       const result = await signIn("credentials", {
