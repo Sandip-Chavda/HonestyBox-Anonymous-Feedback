@@ -10,7 +10,7 @@ const Navbar = () => {
   const user: User = session?.user as User;
 
   return (
-    <nav className=" p-4 shadow-md">
+    <nav className=" p-4 shadow-md dark:shadow-slate-400/50 dark:shadow-md">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <a className="text-xl font-bold mb-4 md:mb-0" href="/">
           Honesty Box

@@ -103,7 +103,7 @@ const DashboardPage = () => {
 
   if (!session || !session.user) {
     return (
-      <div>
+      <div className="dark:text-white text-black">
         Please login to view dashboard, <Link href="/sing-in">Sign in</Link>
       </div>
     );
@@ -121,7 +121,7 @@ const DashboardPage = () => {
   };
 
   return (
-    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded w-full max-w-6xl">
+    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 dark:bg-gray-800 bg-white rounded w-full max-w-6xl">
       <h1 className="text-4xl font-bold mb-4">User Dashboard</h1>
 
       <div className="mb-4">
@@ -131,21 +131,26 @@ const DashboardPage = () => {
             type="text"
             value={profileUrl}
             disabled
-            className="input input-bordered w-full p-2 mr-2"
+            className="input input-bordered w-full p-2 mr-2 dark:bg-gray-950"
           />
           <Button onClick={copyToClipboard}>Copy</Button>
         </div>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 flex items-center gap-2">
         <Switch
           {...register("acceptMessages")}
           checked={acceptMessages}
           onCheckedChange={handleSwitchChange}
           disabled={isSwitchLoading}
         />
-        <span className="ml-2">
-          Accept Messages: {acceptMessages ? "On" : "Off"}
+        <span className="ml-2 flex">
+          Accept Messages:{" "}
+          {acceptMessages ? (
+            <p className="bg-green-500 px-2 ml-2 rounded-xl">On</p>
+          ) : (
+            <p className="bg-red-500 px-2 ml-2 rounded-xl">Off</p>
+          )}
         </span>
       </div>
       <Separator />

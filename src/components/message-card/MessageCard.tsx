@@ -76,7 +76,7 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
           </AlertDialog>
         </div>
 
-        <div className="text-xs text-gray-500 mt-2">
+        <div className="text-xs text-gray-500 dark:text-gray-400 font-medium mt-2">
           {/* {dayjs(message.createdAt).format("MMM D, YYYY h:mm A")} */}
           {formattedCreatedAt}
         </div>

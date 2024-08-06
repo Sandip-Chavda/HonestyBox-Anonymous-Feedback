@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/context/AuthProvider";
 import { Toaster } from "react-hot-toast";
+import DarkModeProviders from "@/context/DarkModeProvider";
+import ThemeSwitcher from "@/components/darkmode-theme-switcher/ThemeSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +22,13 @@ export default function RootLayout({
     <html lang="en">
       <AuthProvider>
         <body className={inter.className}>
-          {children}
-          <Toaster position="top-right" />
+          <DarkModeProviders>
+            {children}
+            <div className="fixed bottom-12 right-8 z-10 w-fit">
+              <ThemeSwitcher />
+            </div>
+            <Toaster position="top-right" />
+          </DarkModeProviders>
         </body>
       </AuthProvider>
     </html>

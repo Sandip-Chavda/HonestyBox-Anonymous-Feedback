@@ -59,8 +59,8 @@ const VerifyAccountPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen dark:bg-gray-950 bg-gray-100">
+      <div className="w-full max-w-md p-8 space-y-8 dark:bg-gray-800 bg-white rounded-lg shadow-md">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-6">
             Verify Your Account
@@ -92,15 +92,33 @@ const VerifyAccountPage = () => {
                       maxLength={6}
                     >
                       <InputOTPGroup>
-                        <InputOTPSlot index={0} />
-                        <InputOTPSlot index={1} />
-                        <InputOTPSlot index={2} />
+                        <InputOTPSlot
+                          className="dark:border dark:border-white/60"
+                          index={0}
+                        />
+                        <InputOTPSlot
+                          className="dark:border dark:border-white/60"
+                          index={1}
+                        />
+                        <InputOTPSlot
+                          className="dark:border dark:border-white/60"
+                          index={2}
+                        />
                       </InputOTPGroup>
                       <InputOTPSeparator />
                       <InputOTPGroup>
-                        <InputOTPSlot index={3} />
-                        <InputOTPSlot index={4} />
-                        <InputOTPSlot index={5} />
+                        <InputOTPSlot
+                          className="dark:border dark:border-white/60"
+                          index={3}
+                        />
+                        <InputOTPSlot
+                          className="dark:border dark:border-white/60"
+                          index={4}
+                        />
+                        <InputOTPSlot
+                          className="dark:border dark:border-white/60"
+                          index={5}
+                        />
                       </InputOTPGroup>
                     </InputOTP>
                   </FormControl>

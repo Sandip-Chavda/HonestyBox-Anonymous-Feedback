@@ -28,7 +28,7 @@ function UserPage() {
   const watchContent = form.watch("content");
 
   const initialMessageString =
-    "Sandip is great software engineer.||I like to get skills like Sandip.||Hey will you join our team? It's so much learning for us.";
+    "You are a great software engineer known for your impressive skills and achievements in the field.||I greatly admire you for your exceptional skills and expertise.||Hey, would you like to join our team? There's so much to learn for all of us.";
   const params = useParams<{ username: string }>();
   const specialChar = "||";
 
@@ -89,7 +89,7 @@ function UserPage() {
   }
 
   return (
-    <div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
+    <div className="container mx-auto my-8 p-6 bg-white dark:bg-gray-700 rounded max-w-4xl">
       <h1 className="text-4xl font-bold mb-6 text-center">
         Public Profile Link
       </h1>
@@ -141,12 +141,12 @@ function UserPage() {
           <p>Click on any message below to select it.</p>
         </div>
         <Card>
-          <CardHeader className="font-bold">Messages</CardHeader>
+          <CardHeader className="font-bold">Suggested Messages</CardHeader>
           <CardContent className="flex flex-col space-y-4">
             {(text ? StringSplit(text) : StringSplit(initialMessageString)).map(
               (data, index) => (
                 <Button
-                  className="bg-transparent border text-black hover:bg-white w-full text-left whitespace-normal h-auto py-2"
+                  className="bg-transparent border dark:bg-gray-300 text-black hover:bg-slate-100 w-full text-left whitespace-normal h-auto py-2 dark:hover:bg-black dark:hover:text-white transition-all duration-200 dark:hover:border-white"
                   key={index}
                   onClick={() => handleTextMessage(data)}
                 >
