@@ -28,7 +28,7 @@ function UserPage() {
   const watchContent = form.watch("content");
 
   const initialMessageString =
-    "What's your favorite movie?||Do you have any pets?||What's your dream job?";
+    "Sandip is great software engineer.||I like to get skills like Sandip.||Hey will you join our team? It's so much learning for us.";
   const params = useParams<{ username: string }>();
   const specialChar = "||";
 
@@ -51,7 +51,7 @@ function UserPage() {
       form.setValue("content", "");
     } catch (error: any) {
       console.log(error);
-      toast.error("Failed to send message, try again!");
+      toast.error("User not accepting messages or try again!");
     } finally {
       setIsLoading(false);
     }
@@ -60,6 +60,7 @@ function UserPage() {
   function handleTextMessage(data: string) {
     form.setValue("content", data);
   }
+
   async function onSuggestMessage() {
     const a = "notavailable";
 

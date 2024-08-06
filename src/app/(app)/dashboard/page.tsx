@@ -40,13 +40,15 @@ const DashboardPage = () => {
     setIsSwitchLoading(true);
 
     try {
-      const response = await axios.get<ApiResponse>(`/api/accept-messages`);
+      const response = await axios.get<ApiResponse>("/api/accept-messages");
+
+      // console.log(".............", response.data.isAcceptingMessage);
 
       setValue("acceptMessages", response.data.isAcceptingMessage);
     } catch (error) {
       console.error("Error in accepting messages!", error);
 
-      const axiosErorr = error as AxiosError<ApiResponse>;
+      // const axiosErorr = error as AxiosError<ApiResponse>;
 
       toast.error("Something went wrong to accept message!");
     } finally {
@@ -59,15 +61,15 @@ const DashboardPage = () => {
       setLoading(true);
       setIsSwitchLoading(false);
       try {
-        const response = await axios.get<ApiResponse>("/api/get-message");
+        const response = await axios.get<ApiResponse>("/api/get-messages");
         console.log(response.data.messages);
         setMessages(response.data.messages || []);
         if (refresh) {
-          toast.success("Refreshed messages...");
+          toast.success("Messages refreshed");
         }
       } catch (error) {
-        const axiosError = error as AxiosError<ApiResponse>;
-        toast.error("Failed to get refreshed messages!");
+        // const axiosError = error as AxiosError<ApiResponse>;
+        toast.success("There is no new messages");
       } finally {
         setLoading(false);
         setIsSwitchLoading(false);

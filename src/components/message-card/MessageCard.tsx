@@ -26,6 +26,10 @@ interface MessageCardProps {
 }
 
 const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
+  const formattedCreatedAt = dayjs(message.createdAt).format(
+    "MMM D, YYYY h:mm A"
+  );
+
   const handleDeleteConfirm = async () => {
     try {
       const response = await axios.delete<ApiResponse>(
@@ -73,7 +77,8 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
         </div>
 
         <div className="text-xs text-gray-500 mt-2">
-          {dayjs(message.createdAt).format("MMM D, YYYY h:mm A")}
+          {/* {dayjs(message.createdAt).format("MMM D, YYYY h:mm A")} */}
+          {formattedCreatedAt}
         </div>
       </CardHeader>
     </Card>
