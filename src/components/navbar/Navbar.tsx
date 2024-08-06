@@ -4,19 +4,8 @@ import { useSession, signOut } from "next-auth/react";
 import { User } from "next-auth";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { SquareMenu, UserCircle } from "lucide-react";
 
 const Navbar = () => {
-  const currentURL = window.location.href;
-  const dashboardUrl = currentURL.endsWith("/dashboard");
   const { data: session } = useSession();
   const user: User = session?.user as User;
 
@@ -45,18 +34,6 @@ const Navbar = () => {
               </Link>
             </>
           )}
-
-          {dashboardUrl ? (
-            <Link href={"/"}>
-              <Button className="w-full md:w-auto">Home</Button>
-            </Link>
-          ) : null}
-
-          {session && !dashboardUrl ? (
-            <Link href={"/dashboard"} className="ml-2">
-              <Button className="w-full md:w-auto">Dashboard</Button>
-            </Link>
-          ) : null}
         </div>
       </div>
     </nav>
