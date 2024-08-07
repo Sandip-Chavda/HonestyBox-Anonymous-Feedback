@@ -5,6 +5,7 @@ import AuthProvider from "@/context/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import DarkModeProviders from "@/context/DarkModeProvider";
 import ThemeSwitcher from "@/components/darkmode-theme-switcher/ThemeSwitcher";
+import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,8 @@ export default function RootLayout({
       <AuthProvider>
         <body className={inter.className}>
           <DarkModeProviders>
+            <Navbar />
+
             {children}
             <div className="fixed bottom-12 right-8 z-10 w-fit">
               <ThemeSwitcher />

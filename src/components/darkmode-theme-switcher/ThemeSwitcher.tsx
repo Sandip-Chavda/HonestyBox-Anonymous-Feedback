@@ -13,7 +13,7 @@ export default function ThemeSwitcher() {
   }
   return (
     <button
-      className={`w-fit p-2 rounded-full hover:scale-110 active:scale-100 duration-200 bg-black shadow-red-400 shadow-lg dark:bg-white`}
+      className={`w-fit p-2 rounded-full hover:scale-110 active:scale-100 duration-200 bg-black shadow-[#804dff] shadow-lg dark:bg-white`}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? (
