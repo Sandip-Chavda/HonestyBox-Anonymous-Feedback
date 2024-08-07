@@ -1,4 +1,5 @@
 import HeroSectionTextHover from "@/components/animata/hero-section-text-hover";
+import Footer from "@/components/footer/Footer";
 import { MarqueeDemo } from "@/components/magicui/Marquee-user";
 import {
   Accordion,
@@ -27,7 +28,7 @@ export default function Home() {
           <MarqueeDemo />
         </section>
 
-        <section className="text-center w-full mb-8 md:mb-12">
+        <section id="faq" className="text-center w-full mb-8 md:mb-12">
           <div className="md:text-2xl text-xl font-medium">
             Frequently Asked Qestions (FAQ)
           </div>
@@ -132,8 +133,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="text-center p-4 md:p-6">
-        © 2024 Mystery Message. All rights reserved
+      <footer className="">
+        <Footer />
       </footer>
     </>
   );
