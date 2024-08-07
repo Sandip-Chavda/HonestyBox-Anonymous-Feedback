@@ -121,19 +121,24 @@ const DashboardPage = () => {
   };
 
   return (
-    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 dark:bg-gray-800 bg-white rounded w-full max-w-6xl">
+    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 dark:bg-gray-800 bg-white border shadow-md rounded-lg w-full max-w-6xl">
       <h1 className="text-4xl font-bold mb-4">User Dashboard</h1>
 
       <div className="mb-4">
-        <h2 className="text-lg font-semibold mb-2">Copy Your Unique Link</h2>{" "}
-        <div className="flex items-center">
+        <h2 className="text-base font-semibold mb-2">Copy Your Unique Link</h2>{" "}
+        <div className="flex items-center gap-5">
           <input
             type="text"
             value={profileUrl}
             disabled
-            className="input input-bordered w-full p-2 mr-2 dark:bg-gray-950"
+            className="input input-bordered w-full rounded-lg py-2.5 px-5 text-[#804dff] font-semibold dark:bg-gray-950 bg-slate-200"
           />
-          <Button onClick={copyToClipboard}>Copy</Button>
+          <Button
+            className="bg-[#804dff] text-white hover:bg-[#6f36ff] font-medium"
+            onClick={copyToClipboard}
+          >
+            Copy
+          </Button>
         </div>
       </div>
 
@@ -153,22 +158,27 @@ const DashboardPage = () => {
           )}
         </span>
       </div>
-      <Separator />
+      <Separator className="bg-[#804dff]" />
 
       <Button
-        className="mt-4"
-        variant="outline"
+        className="mt-4 bg-[#804dff] text-white hover:bg-[#6f36ff]"
+        variant="default"
         onClick={(e) => {
           e.preventDefault();
           fetchMessages(true);
         }}
       >
         {loading ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
+          <>
+            <Loader2 className="h-4 w-4 animate-spin mr-2" /> Refreshing...
+          </>
         ) : (
-          <RefreshCcw className="h-4 w-4" />
+          <>
+            <RefreshCcw className="h-4 w-4 mr-2" /> Refresh
+          </>
         )}
       </Button>
+
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
         {messages.length > 0 ? (
           messages.map((message, index) => (

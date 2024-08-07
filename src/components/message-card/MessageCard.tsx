@@ -45,7 +45,7 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
   };
 
   return (
-    <Card>
+    <Card className="bg-slate-200 dark:bg-gray-950 border-[1.2px] border-[#804dff]">
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <CardTitle className="text-sm md:text-base break-all overflow-hidden">
@@ -61,14 +61,19 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
             <AlertDialogContent>
               <AlertDialogHeader>
                 <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                <AlertDialogDescription>
+                <AlertDialogDescription className="text-gray-700 dark:text-gray-300">
                   This action cannot be undone. This will permanently delete
                   this message.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction onClick={handleDeleteConfirm}>
+                <AlertDialogCancel className="bg-transparent border-[1.5px] border-[#804dff] hover:bg-[#804dff] dark:text-white hover:text-white text-black">
+                  Cancel
+                </AlertDialogCancel>
+                <AlertDialogAction
+                  className="bg-red-500 text-white hover:bg-red-700"
+                  onClick={handleDeleteConfirm}
+                >
                   Continue
                 </AlertDialogAction>
               </AlertDialogFooter>

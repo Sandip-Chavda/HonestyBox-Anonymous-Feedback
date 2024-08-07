@@ -102,10 +102,10 @@ const SignUpPage = () => {
     <div className="flex  justify-center items-center min-h-screen dark:bg-gray-950 bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-2 bg-white dark:bg-gray-800 rounded-lg shadow-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Join Honsty Box
+          <h1 className="text-4xl  font-extrabold tracking-tight mb-3">
+            Join <span className="text-[#804dff]">HonstyBox</span>
           </h1>
-          <p className="mb-4">
+          <p className="mb-6">
             Welcome! Please fill in the details to get started.
           </p>
         </div>
@@ -176,7 +176,11 @@ const SignUpPage = () => {
               )}
             />
 
-            <Button className="w-full" type="submit" disabled={isSubmitting}>
+            <Button
+              className="w-full bg-[#804dff] dark:text-white hover:bg-[#6f36ff]"
+              type="submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Loading...
@@ -192,7 +196,7 @@ const SignUpPage = () => {
           <p>Already have an account?</p>
           <Link
             href="/sign-in"
-            className="text-blue-600 hover:text-blue-800 hover:underline"
+            className="text-[#804dff] hover:text-[#6f36ff] hover:underline"
           >
             Sign in
           </Link>

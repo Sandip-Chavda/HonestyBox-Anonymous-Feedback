@@ -41,7 +41,7 @@ const Navbar = () => {
     <div>
       <header
         className={cn(
-          " flex h-16 w-full px-4 shrink-0 items-center font-normal shadow-xl dark:shadow-lg dark:shadow-white/15"
+          " flex h-16 w-full px-4 md:px-16 shrink-0 items-center font-normal shadow-md shadow-[#804dff]"
         )}
       >
         {/* For mobile screen */}
@@ -53,7 +53,7 @@ const Navbar = () => {
             >
               <Image
                 className="w-10"
-                src="./logo.svg"
+                src="/logo.svg"
                 alt="logo"
                 width={50}
                 height={50}
@@ -123,7 +123,7 @@ const Navbar = () => {
         >
           <Image
             className="w-10"
-            src="./logo.svg"
+            src="/logo.svg"
             alt="logo"
             width={50}
             height={50}

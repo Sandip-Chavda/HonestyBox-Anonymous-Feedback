@@ -108,8 +108,8 @@ const SigninPage = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-950">
       <div className="w-full max-w-md p-8 space-y-8 bg-white dark:bg-gray-800 rounded-lg shadow-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-6">
-            Sign in to HonestyBox
+          <h1 className="text-4xl font-extrabold tracking-tight mb-4">
+            Sign in to <span className="text-[#804dff]">HonestyBox</span>
           </h1>
           <p className="mb-4">Welcome back! Please sign in to continue</p>
         </div>
@@ -153,7 +153,11 @@ const SigninPage = () => {
             />
 
             <div className="flex space-x-4">
-              <Button className="w-full" type="submit" disabled={isSubmitting}>
+              <Button
+                className="w-full bg-transparent border-[1.5px] border-[#804dff] hover:bg-[#804dff] dark:text-white hover:text-white text-black"
+                type="submit"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Loading...
@@ -167,7 +171,7 @@ const SigninPage = () => {
                 disabled={loading}
                 type="button"
                 onClick={handleDemoLogin}
-                variant="outline"
+                className="bg-[#804dff] dark:text-white hover:bg-[#6f36ff]"
               >
                 {loading ? (
                   <>
@@ -185,7 +189,7 @@ const SigninPage = () => {
           <p>Don’t have an account?</p>
           <Link
             href="/sign-up"
-            className="text-blue-600 hover:text-blue-800 hover:underline"
+            className="text-[#804dff] hover:text-[#6f36ff] hover:underline"
           >
             Sign up
           </Link>
