@@ -10,17 +10,17 @@
 
 - ## Video
 
-https://github.com/Sandip-Chavda/Skill-Connect-Job-Board/assets/140686165/b6ceda66-bdb4-4d6b-8cdf-14344db7f0b3
+https://github.com/user-attachments/assets/ec53bc3b-cc7c-4944-981a-2d70789df37b
 
 - ## Images
 
-| 1   | 2   | 3   |
+| Home Page   | Home Page   | Dashboard   |
 | --- | --- | --- |
-|     |     |     |
+| ![Home](https://github.com/user-attachments/assets/3a89f169-8bd0-47e3-8f2b-cb363fccb9a7) |  ![Home1](https://github.com/user-attachments/assets/f62d7afe-2f66-420f-8fef-de5711bd68e8) |  ![Dashboard](https://github.com/user-attachments/assets/69bec177-6110-4210-9381-2888c3dfadaf) |
 
-| 4   | 5   | 6   |
+| Public Page   | SignIn Page   | SignUp Page   |
 | --- | --- | --- |
-|     |     |     |
+|  ![Publicpage](https://github.com/user-attachments/assets/46fc2bcc-81b0-409e-a843-878edd654bd0) | ![Login](https://github.com/user-attachments/assets/8520a84e-abeb-4507-908b-87de4ca24afe)  | ![Signup](https://github.com/user-attachments/assets/b4987d7e-0af5-406e-96e6-7496c4ab7575) |
 
 ## Key Features
 
