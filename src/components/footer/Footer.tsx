@@ -19,12 +19,12 @@ const Footer = () => {
         <div className="md:w-[70%] w-full px-4 flex justify-between md:justify-evenly items-center">
           <div className="flex md:flex-row flex-col  gap-4">
             <Link href="/sign-up">
-              <Button className="bg-[#804dff] text-white hover:bg-[#672cfc] transition-all duration-300 font-medium">
+              <Button className="bg-transparent border-[1.5px] border-[#804dff] dark:text-white font-medium text-black hover:bg-[#804dff] hover:text-white transition-all duration-200">
                 Getting Started Now
               </Button>
             </Link>
             <Link href="/sign-in">
-              <Button className="bg-transparent border-[1.5px] border-[#804dff] dark:text-white font-medium text-black hover:bg-[#804dff] hover:text-white transition-all duration-200">
+              <Button className=" bg-[#804dff] text-white hover:bg-[#672cfc] transition-all duration-300 font-medium">
                 Demo Login
               </Button>
             </Link>
@@ -88,25 +88,34 @@ const Footer = () => {
         </div>
 
         <div className="flex mt-3 gap-4">
-          <Link href="">
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/in/sandip-chavda-86704a2aa/"
+          >
             <FaLinkedin
               size={28}
               className="text-blue-500 hover:scale-110 transition-all duration-300"
             />
           </Link>
-          <Link href="">
+          <Link
+            target="_blank"
+            href="https://github.com/Sandip-Chavda?tab=overview&from=2024-08-01&to=2024-08-08"
+          >
             <FaGithub
               size={28}
               className="text-black dark:text-white hover:scale-110 transition-all duration-300"
             />
           </Link>
-          <Link href="">
+          <Link
+            target="_blank"
+            href="https://sandip-chavda-portfolio.vercel.app/"
+          >
             <FaGlobe
               size={28}
               className="text-orange-500 hover:scale-110 transition-all duration-300"
             />
           </Link>
-          <Link href="">
+          <Link target="_blank" href="https://x.com/SandipC70731202">
             <FaSquareXTwitter
               size={28}
               className="text-black dark:text-white hover:scale-110 transition-all duration-300"

@@ -1,4 +1,5 @@
 import HeroSectionTextHover from "@/components/animata/hero-section-text-hover";
+// import ConfettiComponents from "@/components/confetti/Confetti";
 import Footer from "@/components/footer/Footer";
 import { MarqueeDemo } from "@/components/magicui/Marquee-user";
 import {
@@ -12,15 +13,9 @@ export default function Home() {
   return (
     <>
       <main className="flex-grow flex flex-col items-center px-4 md:px-24 py-8">
-        <section className="text-center mb-8 md:mb-2">
-          {/* <h1 className="text-3xl md:text-5xl font-bold !leading-snug">
-            Experience <span>Honest</span> Conversations{" "}
-            <span>Anonymously</span>
-          </h1>
-          <p className="mt-3 md:mt-4 text-base md:text-lg">
-            Explore Mystery Message - Where your identity remains a secret
-          </p> */}
+        {/* <ConfettiComponents /> */}
 
+        <section className="text-center mb-8 md:mb-2">
           <HeroSectionTextHover />
         </section>
 

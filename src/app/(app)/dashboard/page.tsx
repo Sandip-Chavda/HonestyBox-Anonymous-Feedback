@@ -16,6 +16,7 @@ import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { Loader2, RefreshCcw } from "lucide-react";
 import MessageCard from "@/components/message-card/MessageCard";
+import ConfettiComponent from "@/components/confetti/Confetti";
 
 const DashboardPage = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -123,7 +124,7 @@ const DashboardPage = () => {
   return (
     <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 dark:bg-gray-800 bg-white border shadow-md rounded-lg w-full max-w-6xl">
       <h1 className="text-4xl font-bold mb-4">User Dashboard</h1>
-
+      <ConfettiComponent />
       <div className="mb-4">
         <h2 className="text-base font-semibold mb-2">Copy Your Unique Link</h2>{" "}
         <div className="flex items-center gap-5">
